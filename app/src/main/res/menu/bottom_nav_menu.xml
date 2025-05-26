@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_Spanish"
+        android:icon="@drawable/ic_home_24"
+        android:title="Liga Spanyol" />
+    <item
+        android:id="@+id/nav_Team"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="All Teams" />
+    <item
+        android:id="@+id/nav_Profile"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:title="Profile" />
+</menu>
