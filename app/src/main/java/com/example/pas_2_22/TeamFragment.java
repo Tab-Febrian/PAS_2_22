@@ -35,20 +35,20 @@ public class TeamFragment extends Fragment {
     }
 
     private void getTeamData() {
-        APIClient.getApiClient().getSpanishLeagueTeams()
+        APIClient.getApiClient().getAllTeams()
                 .enqueue(new Callback<TeamResponse>() {
                     @Override
                     public void onResponse(Call<TeamResponse> call, Response<TeamResponse> response) {
                         if (response.isSuccessful() && response.body() != null) {
                             List<Team> teams = response.body().getTeams();
-                            TeamAdapter adapter = new TeamAdapter(TeamFragment.this, teams);
+                            TeamAdapter adapter = new TeamAdapter(getContext(), teams);
                             recyclerView.setAdapter(adapter);
                         }
                     }
 
                     @Override
                     public void onFailure(Call<TeamResponse> call, Throwable t) {
-                        Toast.makeText(SpanishFragment.this, "Gagal load data", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Gagal load data", Toast.LENGTH_SHORT).show();
                     }
                 });
     }

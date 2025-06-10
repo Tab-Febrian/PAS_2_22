@@ -7,14 +7,23 @@ public class Team {
     @SerializedName("strStadium")
     private String strStadium;
 
+    @SerializedName("intStadiumCapacity")
+    private String intStadiumCapacity;
+
+    @SerializedName("strLocation")
+    private String strLocation;
+
     @SerializedName("strBadge")
     private String strBadge;
+
     public String getStrTeam() {
         return strTeam;
     }
     public String getStrStadium() {
         return strStadium;
     }
+    public String getIntStadiumCapacity() { return intStadiumCapacity; }
+    public  String getStrLocation() { return strLocation; }
     public String getStrBadge() {
         return strBadge;
     }

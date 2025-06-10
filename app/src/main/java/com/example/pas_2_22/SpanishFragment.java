@@ -26,7 +26,7 @@ public class SpanishFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_team, container, false);
+        View view = inflater.inflate(R.layout.fragment_spanish, container, false);
         super.onCreate(savedInstanceState);
         recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -41,14 +41,14 @@ public class SpanishFragment extends Fragment {
                     public void onResponse(Call<TeamResponse> call, Response<TeamResponse> response) {
                         if (response.isSuccessful() && response.body() != null) {
                             List<Team> teams = response.body().getTeams();
-                            TeamAdapter adapter = new TeamAdapter(SpanishFragment.this, teams);
+                            com.example.pas_2_22.TeamAdapter adapter = new com.example.pas_2_22.TeamAdapter(getContext(), teams);
                             recyclerView.setAdapter(adapter);
                         }
                     }
 
                     @Override
                     public void onFailure(Call<TeamResponse> call, Throwable t) {
-                        Toast.makeText(SpanishFragment.this, "Gagal load data", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Gagal load data", Toast.LENGTH_SHORT).show();
                     }
                 });
     }

@@ -33,6 +33,8 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.TeamViewHolder
         Team team = teamList.get(position);
         holder.tvTeamName.setText(team.getStrTeam());
         holder.tvTeamStadium.setText(team.getStrStadium());
+        holder.tvStadiumCapacity.setText(team.getIntStadiumCapacity());
+        holder.tvTeamLocation.setText(team.getStrLocation());
         Glide.with(context)
                 .load(team.getStrBadge())
                 .into(holder.ivBadge);
@@ -44,13 +46,15 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.TeamViewHolder
     }
 
     class TeamViewHolder extends RecyclerView.ViewHolder {
-        TextView tvTeamName, tvTeamStadium;
+        TextView tvTeamName, tvTeamStadium, tvStadiumCapacity, tvTeamLocation;
         ImageView ivBadge;
 
         public TeamViewHolder(View itemView) {
             super(itemView);
             tvTeamName = itemView.findViewById(R.id.tvTeamName);
             tvTeamStadium = itemView.findViewById(R.id.tvTeamStadium);
+            tvStadiumCapacity = itemView.findViewById(R.id.tvStadiumCapacity);
+            tvTeamLocation = itemView.findViewById(R.id.tvTeamLocation);
             ivBadge = itemView.findViewById(R.id.ivBadge);
         }
     }
